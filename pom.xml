@@ -284,14 +284,14 @@
   
   <repositories>
     <repository>
-      <id>kasisoft-release</id>
+      <id>kasisoft-ext-release</id>
       <releases><enabled>true</enabled></releases>
-      <url>https://kasisoft.com/artifactory/libs-release-local</url>
+      <url>https://kasisoft.com/artifactory/ext-release-local</url>
     </repository>
     <repository>
-      <id>kasisoft-snapshots</id>
-      <releases><enabled>true</enabled></releases>
-      <url>https://kasisoft.com/artifactory/libs-snapshot-local</url>
+      <id>kasisoft-ext-snapshot</id>
+      <snapshots><enabled>true</enabled></snapshots>
+      <url>https://kasisoft.com/artifactory/ext-snapshot-local</url>
     </repository>
   </repositories>
   
