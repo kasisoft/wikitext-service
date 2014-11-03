@@ -282,4 +282,17 @@
     
   </distributionManagement>
   
+  <repositories>
+    <repository>
+      <id>kasisoft-release</id>
+      <releases><enabled>true</enabled></releases>
+      <url>https://kasisoft.com/artifactory/libs-release-local</url>
+    </repository>
+    <repository>
+      <id>kasisoft-snapshots</id>
+      <releases><enabled>true</enabled></releases>
+      <url>https://kasisoft.com/artifactory/libs-snapshot-local</url>
+    </repository>
+  </repositories>
+  
 </project>
