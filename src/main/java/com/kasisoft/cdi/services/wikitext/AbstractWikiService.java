@@ -21,7 +21,7 @@ import lombok.extern.slf4j.*;
  * @author daniel.kasmeroglu@kasisoft.net
  */
 @Slf4j
-abstract class AbstractWikiService {
+public abstract class AbstractWikiService implements Serializable {
 
   private static final HtmlConfig DEFAULT_CONFIG  = new HtmlConfig();
   
