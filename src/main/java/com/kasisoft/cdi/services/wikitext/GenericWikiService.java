@@ -13,7 +13,7 @@ import lombok.experimental.*;
  * @author daniel.kasmeroglu@kasisoft.net
  */
 @FieldDefaults(level = AccessLevel.PRIVATE)
-@Singleton
+@Named @Singleton
 @ConcurrencyManagement(ConcurrencyManagementType.BEAN)
 public class GenericWikiService implements Serializable {
 
