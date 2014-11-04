@@ -53,4 +53,17 @@ public class GenericWikiService implements Serializable {
     }
   }
 
+  /**
+   * Builds the HTML code from the supplied markup.
+   * 
+   * @param type     The type of the desired service. Not <code>null</code>.
+   * @param config   Some configuration options for the markup generation. Maybe <code>null</code>.
+   * @param markup   The markup which will be converted into HTML. Not <code>null</code>.
+   * 
+   * @return   The converted HTML code. Not <code>null</code>.
+   */
+  public String buildHtml( @NonNull WikiType type, HtmlConfig config, @NonNull String markup ) {
+    return getWikiService( type ).buildHtml( config, markup );
+  }
+  
 } /* ENDCLASS */
