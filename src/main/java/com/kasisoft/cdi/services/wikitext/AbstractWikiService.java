@@ -21,7 +21,7 @@ import lombok.extern.slf4j.*;
  * @author daniel.kasmeroglu@kasisoft.net
  */
 @Slf4j
-public abstract class AbstractWikiService implements Serializable {
+public abstract class AbstractWikiService implements HtmlService, Serializable {
 
   private static final HtmlConfig DEFAULT_CONFIG  = new HtmlConfig();
   
@@ -33,14 +33,7 @@ public abstract class AbstractWikiService implements Serializable {
     name   = language.getName();
   }
   
-  /**
-   * Builds the HTML code from the supplied markup.
-   * 
-   * @param config      Some configuration options for the markup generation. Maybe <code>null</code>.
-   * @param markup      The markup which will be converted into HTML. Not <code>null</code>.
-   * 
-   * @return   The converted HTML code. Not <code>null</code>.
-   */
+  @Override
   public String buildHtml( HtmlConfig config, @NonNull String markup ) {
     try {
       if( config == null ) {
