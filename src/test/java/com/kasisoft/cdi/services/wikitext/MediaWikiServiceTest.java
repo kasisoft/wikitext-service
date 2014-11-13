@@ -87,7 +87,6 @@ public class MediaWikiServiceTest {
   public void buildHtml() {
     String html = wikiService.buildHtml( null, MARKUP );
     assertThat( html, is( EXPECTED ) );
-    
   }
   
 } /* ENDCLASS */
