@@ -52,13 +52,13 @@
     
     <!-- versioning (java artifacts) -->
     <version-cobertura>2.0.3</version-cobertura>
-    <version-cdi-configuration>0.2-SNAPSHOT</version-cdi-configuration>
+    <version-cdi-configuration>0.2</version-cdi-configuration>
     <version-cdi-testbasis>0.1</version-cdi-testbasis>
     <version-commons-codec>1.9</version-commons-codec>
     <version-guava>15.0</version-guava>
     <version-hamcrest>1.3</version-hamcrest>
     <version-javaee>6.0-6</version-javaee>
-    <version-kasisoft-common>1.4</version-kasisoft-common>
+    <version-kasisoft-common>1.5</version-kasisoft-common>
     <version-log4j>1.6.4</version-log4j>
     <version-lombok>1.14.8</version-lombok>
     <version-openejb>4.7.0</version-openejb>
