@@ -64,7 +64,7 @@
     <version-openejb>4.7.0</version-openejb>
     <version-slf4j>1.7.2</version-slf4j>
     <version-testng>6.8.8</version-testng>
-    <version-wikitext>2.3.0-SNAPSHOT</version-wikitext>
+    <version-wikitext>2.3.0</version-wikitext>
     
     <!-- versioning (maven plugins) -->
     <plugin-version-cobertura-maven>2.6</plugin-version-cobertura-maven>
@@ -170,49 +170,49 @@
     </dependency>
 
     <dependency>
-      <groupId>org.eclipse.mylyn.wikitext</groupId>
+      <groupId>com.kasisoft.externals</groupId>
       <artifactId>org.eclipse.mylyn.wikitext.confluence.core</artifactId>
       <version>${version-wikitext}</version>
     </dependency>
 
     <dependency>
-      <groupId>org.eclipse.mylyn.wikitext</groupId>
+      <groupId>com.kasisoft.externals</groupId>
       <artifactId>org.eclipse.mylyn.wikitext.core</artifactId>
       <version>${version-wikitext}</version>
     </dependency>
 
     <dependency>
-      <groupId>org.eclipse.mylyn.wikitext</groupId>
+      <groupId>com.kasisoft.externals</groupId>
       <artifactId>org.eclipse.mylyn.wikitext.html.core</artifactId>
       <version>${version-wikitext}</version>
     </dependency>
 
     <dependency>
-      <groupId>org.eclipse.mylyn.wikitext</groupId>
+      <groupId>com.kasisoft.externals</groupId>
       <artifactId>org.eclipse.mylyn.wikitext.markdown.core</artifactId>
       <version>${version-wikitext}</version>
     </dependency>
 
     <dependency>
-      <groupId>org.eclipse.mylyn.wikitext</groupId>
+      <groupId>com.kasisoft.externals</groupId>
       <artifactId>org.eclipse.mylyn.wikitext.mediawiki.core</artifactId>
       <version>${version-wikitext}</version>
     </dependency>
 
     <dependency>
-      <groupId>org.eclipse.mylyn.wikitext</groupId>
+      <groupId>com.kasisoft.externals</groupId>
       <artifactId>org.eclipse.mylyn.wikitext.textile.core</artifactId>
       <version>${version-wikitext}</version>
     </dependency>
 
     <dependency>
-      <groupId>org.eclipse.mylyn.wikitext</groupId>
+      <groupId>com.kasisoft.externals</groupId>
       <artifactId>org.eclipse.mylyn.wikitext.tracwiki.core</artifactId>
       <version>${version-wikitext}</version>
     </dependency>
 
     <dependency>
-      <groupId>org.eclipse.mylyn.wikitext</groupId>
+      <groupId>com.kasisoft.externals</groupId>
       <artifactId>org.eclipse.mylyn.wikitext.twiki.core</artifactId>
       <version>${version-wikitext}</version>
     </dependency>
