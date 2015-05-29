@@ -3,3 +3,8 @@
 **/.project
 **/.classpath
 **/.settings/
+/target/
+.settings/
+.classpath
+.project
+

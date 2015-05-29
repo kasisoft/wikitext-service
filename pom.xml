@@ -51,7 +51,7 @@
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     
     <!-- versioning (java artifacts) -->
-    <version-cobertura>2.0.3</version-cobertura>
+    <version-cobertura>2.1.1</version-cobertura>
     <version-cdi-configuration>0.2</version-cdi-configuration>
     <version-cdi-testbasis>0.1</version-cdi-testbasis>
     <version-commons-codec>1.9</version-commons-codec>
@@ -67,7 +67,8 @@
     <version-wikitext>2.3.0</version-wikitext>
     
     <!-- versioning (maven plugins) -->
-    <plugin-version-cobertura-maven>2.6</plugin-version-cobertura-maven>
+    <plugin-version-cobertura-maven>2.7</plugin-version-cobertura-maven>
+    <plugin-version-maven-bundle>2.5.4</plugin-version-maven-bundle>
     <plugin-version-maven-compiler>3.1</plugin-version-maven-compiler>
     <plugin-version-maven-eclipse>2.9</plugin-version-maven-eclipse>
     <plugin-version-maven-jar>2.5</plugin-version-maven-jar>
@@ -226,12 +227,6 @@
     <plugins>
 
       <plugin>
-        <groupId>org.codehaus.mojo</groupId>
-        <artifactId>cobertura-maven-plugin</artifactId>
-        <version>${plugin-version-cobertura-maven}</version>
-      </plugin>
-      
-      <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-compiler-plugin</artifactId>
         <version>${plugin-version-maven-compiler}</version>
@@ -268,11 +263,18 @@
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-jar-plugin</artifactId>
         <version>${plugin-version-maven-jar}</version>
+        <configuration>
+          <archive>
+            <addMavenDescriptor>false</addMavenDescriptor>
+          </archive>
+          <useDefaultManifestFile>true</useDefaultManifestFile>
+        </configuration>
       </plugin>
 
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>cobertura-maven-plugin</artifactId>
+        <version>${plugin-version-cobertura-maven}</version>
         <configuration>
           <formats>
             <format>xml</format>
@@ -311,6 +313,28 @@
         <version>${plugin-version-maven-eclipse}</version>
       </plugin>
       
+      <plugin> 
+         <groupId>org.apache.felix</groupId> 
+         <artifactId>maven-bundle-plugin</artifactId>
+         <version>${plugin-version-maven-bundle}</version>
+         <extensions>true</extensions> 
+         <configuration> 
+           <instructions> 
+             <Bundle-SymbolicName>${project.groupId}.${project.artifactId}</Bundle-SymbolicName> 
+             <Bundle-Version>${project.version}</Bundle-Version> 
+           </instructions> 
+         </configuration> 
+        <executions>
+          <execution>
+            <id>generate-manifest</id>
+            <phase>compile</phase>
+            <goals>
+              <goal>manifest</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin> 
+      
     </plugins>
 
   </build>
@@ -345,18 +369,5 @@
     </repository>
       
   </distributionManagement>
-  
-  <repositories>
-    <repository>
-      <id>kasisoft-ext-release</id>
-      <releases><enabled>true</enabled></releases>
-      <url>https://kasisoft.com/artifactory/ext-release-local</url>
-    </repository>
-    <repository>
-      <id>kasisoft-ext-snapshot</id>
-      <snapshots><enabled>true</enabled></snapshots>
-      <url>https://kasisoft.com/artifactory/ext-snapshot-local</url>
-    </repository>
-  </repositories>
   
 </project>
