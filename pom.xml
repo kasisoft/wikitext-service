@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.kasisoft.cdi</groupId>
   <artifactId>wikitext-service</artifactId>
-  <version>0.2-SNAPSHOT</version>
+  <version>0.2</version>
   <name>Wikitext Service</name>
   <description>A simple service which provides the support for wiki text transformations.</description>
   
