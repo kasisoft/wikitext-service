@@ -10,7 +10,7 @@
   </parent>
 
   <artifactId>wikitext-service</artifactId>
-  <version>0.7-SNAPSHOT</version>
+  <version>0.7</version>
     
   <name>CDI :: Wikitext Service</name>
   <description>CDI :: Service which provides the support for wiki text transformations.</description>
@@ -31,7 +31,7 @@
     <!-- url>...</url-->
     <connection>scm:git:ssh://kasisoft.com:7999/cdi/wikitext-service.git</connection>
     <developerConnection>scm:git:ssh://kasisoft.com:7999/cdi/wikitext-service.git</developerConnection>
-    <tag>HEAD</tag>
+    <tag>wikitext-service-0.7</tag>
   </scm>
 
   <issueManagement>
