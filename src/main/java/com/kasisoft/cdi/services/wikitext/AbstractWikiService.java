@@ -3,7 +3,7 @@ package com.kasisoft.cdi.services.wikitext;
 import static com.kasisoft.cdi.services.wikitext.internal.Messages.*;
 
 import com.kasisoft.cdi.services.wikitext.internal.*;
-import com.kasisoft.libs.common.util.*;
+import com.kasisoft.libs.common.text.*;
 
 import org.eclipse.mylyn.wikitext.core.parser.*;
 import org.eclipse.mylyn.wikitext.core.parser.builder.*;
