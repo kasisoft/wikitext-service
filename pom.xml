@@ -6,11 +6,10 @@
   <parent>
     <groupId>com.kasisoft.cdi</groupId>
     <artifactId>parent</artifactId>
-    <version>0.7</version>
+    <version>0.8-SNAPSHOT</version>
   </parent>
 
   <artifactId>wikitext-service</artifactId>
-  <version>0.8-SNAPSHOT</version>
     
   <name>CDI :: Wikitext Service</name>
   <description>CDI :: Service which provides the support for wiki text transformations.</description>
@@ -55,8 +54,8 @@
   <properties>
   
     <!-- versioning (java artifacts) -->
-    <version-configuration>0.7</version-configuration>
-    <version-testbasis>0.7</version-testbasis>
+    <version-configuration>${project.version}</version-configuration>
+    <version-testbasis>${project.version}</version-testbasis>
     <version-wikitext>2.3.0</version-wikitext>
     
   </properties>
