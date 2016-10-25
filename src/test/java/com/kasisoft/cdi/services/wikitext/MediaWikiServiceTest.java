@@ -3,6 +3,8 @@ package com.kasisoft.cdi.services.wikitext;
 import static org.hamcrest.MatcherAssert.*;
 import static org.hamcrest.Matchers.*;
 
+import com.kasisoft.cdi.weldex.*;
+
 import org.testng.annotations.*;
 
 /**
@@ -14,7 +16,7 @@ public class MediaWikiServiceTest {
   
   @BeforeSuite
   public void init() {
-    wikiService = new MediaWikiService();
+    wikiService = CdiContext.component( MediaWikiService.class );
   }
   
   private static final String EXPECTED = ""
@@ -57,6 +59,7 @@ public class MediaWikiServiceTest {
   
   private static final String MARKUP = ""
     + "=My first headline=\n"
+      /*
     + "This is what it's all about.\n"
     + "==My sub headline==\n"
     + "Sub paragraph\n"
@@ -81,11 +84,13 @@ public class MediaWikiServiceTest {
     + "<sub>subscript text</sub>\n\n"
     + "<cite>citation</cite>\n\n"
     + "<tt>monospaced text</tt>\n"
+    */
     ;
   
   @Test
   public void buildHtml() {
     String html = wikiService.buildHtml( null, MARKUP );
+    System.err.println(html);
     assertThat( html, is( EXPECTED ) );
   }
   

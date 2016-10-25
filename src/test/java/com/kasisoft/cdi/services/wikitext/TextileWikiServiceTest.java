@@ -3,6 +3,8 @@ package com.kasisoft.cdi.services.wikitext;
 import static org.hamcrest.MatcherAssert.*;
 import static org.hamcrest.Matchers.*;
 
+import com.kasisoft.cdi.weldex.*;
+
 import org.testng.annotations.*;
 
 /**
@@ -14,7 +16,7 @@ public class TextileWikiServiceTest {
   
   @BeforeSuite
   public void init() {
-    wikiService = new TextileWikiService();
+    wikiService = CdiContext.component( TextileWikiService.class );
   }
   
   private static final String EXPECTED = ""

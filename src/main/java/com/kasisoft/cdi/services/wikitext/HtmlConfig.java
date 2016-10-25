@@ -13,13 +13,13 @@ import lombok.experimental.*;
 public final class HtmlConfig {
 
   // generate only the content which would go into the body
-  boolean   bodyContentOnly   = true;
+  boolean   bodyContentOnly   = false; // true;
   
   // the content to be used in case of an unexpected error while parsing. a null value means to generate 
   // a html description of the error.
   String    errorContent      = null;
   
   // disable the generation of IDs for heading elements
-  boolean   disableHeadingIds = true;
+  boolean   disableHeadingIds = false; // true
   
 } /* ENDCLASS */

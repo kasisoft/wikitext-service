@@ -55,9 +55,7 @@
   
     <!-- versioning (java artifacts) -->
     <version-configuration>${project.version}</version-configuration>
-    <version-testbasis>${project.version}</version-testbasis>
-    <version-wikitext>2.9.0.v20160513-1433</version-wikitext>
-    <version-wikitext-twiki>2.9.0.v20160519-0832</version-wikitext-twiki>
+    <version-wikitext>2.11.0.N20161006-2037</version-wikitext>
     
   </properties>
 
@@ -66,51 +64,51 @@
     <dependencies>
     
       <dependency>
-        <groupId>org.eclipse.mylyn.docs</groupId>
+        <groupId>org.eclipse.mylyn.wikitext</groupId>
         <artifactId>org.eclipse.mylyn.wikitext.confluence.core</artifactId>
         <version>${version-wikitext}</version>
       </dependency>
   
       <dependency>
-        <groupId>org.eclipse.mylyn.docs</groupId>
+        <groupId>org.eclipse.mylyn.wikitext</groupId>
         <artifactId>org.eclipse.mylyn.wikitext.core</artifactId>
         <version>${version-wikitext}</version>
       </dependency>
   
       <dependency>
-        <groupId>org.eclipse.mylyn.docs</groupId>
+        <groupId>org.eclipse.mylyn.wikitext</groupId>
         <artifactId>org.eclipse.mylyn.wikitext.html.core</artifactId>
         <version>${version-wikitext}</version>
       </dependency>
   
       <dependency>
-        <groupId>org.eclipse.mylyn.docs</groupId>
+        <groupId>org.eclipse.mylyn.wikitext</groupId>
         <artifactId>org.eclipse.mylyn.wikitext.markdown.core</artifactId>
         <version>${version-wikitext}</version>
       </dependency>
   
       <dependency>
-        <groupId>org.eclipse.mylyn.docs</groupId>
+        <groupId>org.eclipse.mylyn.wikitext</groupId>
         <artifactId>org.eclipse.mylyn.wikitext.mediawiki.core</artifactId>
         <version>${version-wikitext}</version>
       </dependency>
   
       <dependency>
-        <groupId>org.eclipse.mylyn.docs</groupId>
+        <groupId>org.eclipse.mylyn.wikitext</groupId>
         <artifactId>org.eclipse.mylyn.wikitext.textile.core</artifactId>
         <version>${version-wikitext}</version>
       </dependency>
   
       <dependency>
-        <groupId>org.eclipse.mylyn.docs</groupId>
+        <groupId>org.eclipse.mylyn.wikitext</groupId>
         <artifactId>org.eclipse.mylyn.wikitext.tracwiki.core</artifactId>
         <version>${version-wikitext}</version>
       </dependency>
   
       <dependency>
-        <groupId>org.eclipse.mylyn.docs</groupId>
+        <groupId>org.eclipse.mylyn.wikitext</groupId>
         <artifactId>org.eclipse.mylyn.wikitext.twiki.core</artifactId>
-        <version>${version-wikitext-twiki}</version>
+        <version>${version-wikitext}</version>
       </dependency>
       
       <dependency>
@@ -119,13 +117,6 @@
         <version>${version-configuration}</version>
       </dependency>
   
-      <dependency>
-        <groupId>com.kasisoft.cdi</groupId>
-        <artifactId>testbasis</artifactId>
-        <version>${version-testbasis}</version>
-        <scope>test</scope>
-      </dependency>
-      
     </dependencies>
     
   </dependencyManagement>
@@ -144,11 +135,12 @@
     </dependency>
 
     <dependency>
-      <groupId>org.apache.openejb</groupId>
+      <groupId>org.apache.tomee</groupId>
       <artifactId>javaee-api</artifactId>
       <scope>provided</scope>
     </dependency>
   
+    <!-- 
     <dependency>
       <groupId>org.apache.openejb</groupId>
       <artifactId>openejb-core</artifactId>
@@ -160,16 +152,19 @@
         </exclusion>
       </exclusions>
     </dependency>
+    -->
     
     <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-api</artifactId>
     </dependency>
     
+    <!-- 
     <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-log4j12</artifactId>
     </dependency>
+    -->
     
     <dependency>
       <groupId>org.testng</groupId>
@@ -193,86 +188,76 @@
       <groupId>com.kasisoft.cdi</groupId>
       <artifactId>configuration</artifactId>
     </dependency>
-  
+
+    <!-- 
     <dependency>
       <groupId>commons-codec</groupId>
       <artifactId>commons-codec</artifactId>
     </dependency>
+    -->  
       
+    <!-- 
     <dependency>
       <groupId>com.google.guava</groupId>
       <artifactId>guava</artifactId>
     </dependency>
+    -->
 
     <dependency>
-      <groupId>org.eclipse.mylyn.docs</groupId>
+      <groupId>org.eclipse.mylyn.wikitext</groupId>
       <artifactId>org.eclipse.mylyn.wikitext.confluence.core</artifactId>
     </dependency>
 
     <dependency>
-      <groupId>org.eclipse.mylyn.docs</groupId>
+      <groupId>org.eclipse.mylyn.wikitext</groupId>
       <artifactId>org.eclipse.mylyn.wikitext.core</artifactId>
     </dependency>
 
     <dependency>
-      <groupId>org.eclipse.mylyn.docs</groupId>
+      <groupId>org.eclipse.mylyn.wikitext</groupId>
       <artifactId>org.eclipse.mylyn.wikitext.html.core</artifactId>
     </dependency>
 
     <dependency>
-      <groupId>org.eclipse.mylyn.docs</groupId>
+      <groupId>org.eclipse.mylyn.wikitext</groupId>
       <artifactId>org.eclipse.mylyn.wikitext.markdown.core</artifactId>
     </dependency>
 
     <dependency>
-      <groupId>org.eclipse.mylyn.docs</groupId>
+      <groupId>org.eclipse.mylyn.wikitext</groupId>
       <artifactId>org.eclipse.mylyn.wikitext.mediawiki.core</artifactId>
     </dependency>
 
     <dependency>
-      <groupId>org.eclipse.mylyn.docs</groupId>
+      <groupId>org.eclipse.mylyn.wikitext</groupId>
       <artifactId>org.eclipse.mylyn.wikitext.textile.core</artifactId>
     </dependency>
 
     <dependency>
-      <groupId>org.eclipse.mylyn.docs</groupId>
+      <groupId>org.eclipse.mylyn.wikitext</groupId>
       <artifactId>org.eclipse.mylyn.wikitext.tracwiki.core</artifactId>
     </dependency>
 
     <dependency>
-      <groupId>org.eclipse.mylyn.docs</groupId>
+      <groupId>org.eclipse.mylyn.wikitext</groupId>
       <artifactId>org.eclipse.mylyn.wikitext.twiki.core</artifactId>
     </dependency>
     
     <dependency>
       <groupId>com.kasisoft.cdi</groupId>
-      <artifactId>testbasis</artifactId>
+      <artifactId>weldex</artifactId>
       <scope>test</scope>
     </dependency>
-
+    
   </dependencies>
     
-  <distributionManagement>
-  
-    <snapshotRepository>
-      <id>kasisoft-snapshots</id>
-      <name>kasisoft-snapshots</name>
-      <url>https://kasisoft.com/artifactory/libs-snapshot-local</url>
-    </snapshotRepository>
-    
+  <repositories>
     <repository>
       <id>kasisoft-release</id>
-      <name>kasisoft-release</name>
       <url>https://kasisoft.com/artifactory/libs-release-local</url>
-    </repository>
-      
-  </distributionManagement>
-
-  <repositories>
-    <!-- https://github.com/jmini/mylyn-wikitext-repository -->
-    <repository>
-      <id>bintray.jmini.maven</id>
-      <url>http://dl.bintray.com/jmini/maven/</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
     </repository>
   </repositories>
   
