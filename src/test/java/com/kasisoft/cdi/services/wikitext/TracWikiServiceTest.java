@@ -3,20 +3,15 @@ package com.kasisoft.cdi.services.wikitext;
 import static org.hamcrest.MatcherAssert.*;
 import static org.hamcrest.Matchers.*;
 
-import com.kasisoft.cdi.weldex.*;
-
 import org.testng.annotations.*;
 
 /**
  * @author daniel.kasmeroglu@kasisoft.net
  */
-public class TracWikiServiceTest {
+public class TracWikiServiceTest extends AbstractWikiServiceTest<TracWikiService> {
 
-  private AbstractWikiService   wikiService;
-  
-  @BeforeSuite
-  public void init() {
-    wikiService = CdiContext.component( TracWikiService.class );
+  public TracWikiServiceTest() {
+    super( TracWikiService.class );
   }
   
   private static final String EXPECTED = ""
@@ -85,8 +80,16 @@ public class TracWikiServiceTest {
   
   @Test
   public void buildHtml() {
-    String html = wikiService.buildHtml( null, MARKUP );
+    String html = buildHtml( null, MARKUP );
     assertThat( html, is( EXPECTED ) );
+  }
+
+  @Test
+  public void buildHtmlWithWrapper() {
+    HtmlConfig config = new HtmlConfig();
+    config.setHtmlWrapper( true );
+    String     html   = buildHtml( config, MARKUP );
+    assertThat( html, is( htmlWrap( EXPECTED ) ) );
   }
   
 } /* ENDCLASS */

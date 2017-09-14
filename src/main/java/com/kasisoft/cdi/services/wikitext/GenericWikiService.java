@@ -1,5 +1,7 @@
 package com.kasisoft.cdi.services.wikitext;
 
+import com.kasisoft.cdi.services.wikitext.internal.*;
+
 import javax.ejb.*;
 import javax.ejb.Singleton;
 import javax.inject.*;

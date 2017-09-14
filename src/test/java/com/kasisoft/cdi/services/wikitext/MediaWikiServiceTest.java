@@ -3,20 +3,15 @@ package com.kasisoft.cdi.services.wikitext;
 import static org.hamcrest.MatcherAssert.*;
 import static org.hamcrest.Matchers.*;
 
-import com.kasisoft.cdi.weldex.*;
-
 import org.testng.annotations.*;
 
 /**
  * @author daniel.kasmeroglu@kasisoft.net
  */
-public class MediaWikiServiceTest {
+public class MediaWikiServiceTest extends AbstractWikiServiceTest<MediaWikiService> {
 
-  private AbstractWikiService   wikiService;
-  
-  @BeforeSuite
-  public void init() {
-    wikiService = CdiContext.component( MediaWikiService.class );
+  public MediaWikiServiceTest() {
+    super( MediaWikiService.class );
   }
   
   private static final String EXPECTED = ""
@@ -59,7 +54,6 @@ public class MediaWikiServiceTest {
   
   private static final String MARKUP = ""
     + "=My first headline=\n"
-      /*
     + "This is what it's all about.\n"
     + "==My sub headline==\n"
     + "Sub paragraph\n"
@@ -84,14 +78,20 @@ public class MediaWikiServiceTest {
     + "<sub>subscript text</sub>\n\n"
     + "<cite>citation</cite>\n\n"
     + "<tt>monospaced text</tt>\n"
-    */
     ;
   
   @Test
   public void buildHtml() {
-    String html = wikiService.buildHtml( null, MARKUP );
-    System.err.println(html);
+    String html = buildHtml( null, MARKUP );
     assertThat( html, is( EXPECTED ) );
+  }
+
+  @Test
+  public void buildHtmlWithWrapper() {
+    HtmlConfig config = new HtmlConfig();
+    config.setHtmlWrapper( true );
+    String     html   = buildHtml( config, MARKUP );
+    assertThat( html, is( htmlWrap( EXPECTED ) ) );
   }
   
 } /* ENDCLASS */

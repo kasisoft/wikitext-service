@@ -1,6 +1,8 @@
 package com.kasisoft.cdi.services.wikitext;
 
-import org.eclipse.mylyn.wikitext.markdown.core.*;
+import com.kasisoft.cdi.services.wikitext.internal.*;
+
+import org.eclipse.mylyn.wikitext.markdown.*;
 
 import javax.ejb.*;
 import javax.ejb.Singleton;

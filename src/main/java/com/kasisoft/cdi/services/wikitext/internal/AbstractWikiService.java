@@ -1,18 +1,20 @@
-package com.kasisoft.cdi.services.wikitext;
+package com.kasisoft.cdi.services.wikitext.internal;
 
 import static com.kasisoft.cdi.services.wikitext.internal.Messages.*;
 
-import com.kasisoft.cdi.services.wikitext.internal.*;
-import com.kasisoft.libs.common.text.*;
+import com.kasisoft.cdi.services.wikitext.*;
 
-import org.eclipse.mylyn.wikitext.core.parser.*;
-import org.eclipse.mylyn.wikitext.core.parser.builder.*;
-import org.eclipse.mylyn.wikitext.core.parser.markup.*;
+import org.eclipse.mylyn.wikitext.parser.*;
+import org.eclipse.mylyn.wikitext.parser.builder.*;
+import org.eclipse.mylyn.wikitext.parser.markup.*;
 
 import java.io.*;
 
-import lombok.*;
 import lombok.extern.slf4j.*;
+
+import lombok.experimental.*;
+
+import lombok.*;
 
 /**
  * Base implementation for all services that are supposed to transform markup of a certain type into the corresponding
@@ -21,12 +23,15 @@ import lombok.extern.slf4j.*;
  * @author daniel.kasmeroglu@kasisoft.net
  */
 @Slf4j
+@FieldDefaults(level = AccessLevel.PRIVATE)
+@ToString(of = "name")
+@EqualsAndHashCode(of = "name")
 public abstract class AbstractWikiService implements HtmlService, Serializable {
 
   private static final HtmlConfig DEFAULT_CONFIG  = new HtmlConfig();
   
-  private MarkupParser   parser;
-  private String         name;
+  MarkupParser   parser;
+  String         name;
   
   public AbstractWikiService( @NonNull MarkupLanguage language ) {
     parser = new MarkupParser( language );
@@ -40,7 +45,8 @@ public abstract class AbstractWikiService implements HtmlService, Serializable {
         config = DEFAULT_CONFIG;
       }
       StringWriter        writer     = new StringWriter();
-      HtmlDocumentBuilder docbuilder = new CustomHtmlDocumentBuilder( config, writer );
+      HtmlDocumentBuilder docbuilder = new HtmlDocumentBuilder( new CustomXmlStreamWriter( config, writer ) );
+      docbuilder.setEmitAsDocument( config.isHtmlWrapper() );
       synchronized( parser ) {
         /** 
          * @todo [03-Nov-2014:KASI]   Check whether the parse is expensive or not so we might use multiple instances to
@@ -52,23 +58,12 @@ public abstract class AbstractWikiService implements HtmlService, Serializable {
       return writer.toString();
     } catch( Exception ex ) {
       log.debug( conversion_error.format( name, ex.getLocalizedMessage() ), ex );
-      if( config.getErrorContent() == null ) {
-        return defaultErrorMarkup( ex );
+      if( config.getEmbedErrorContent() != null ) {
+        return config.getEmbedErrorContent().apply( ex );
       } else {
-        return config.getErrorContent();
+        return null;
       }
     }
-  }
-  
-  private String defaultErrorMarkup( Exception ex ) {
-    StringWriter writer = new StringWriter();
-    try( PrintWriter printer = new PrintWriter( writer ) ) {
-      ex.printStackTrace( printer );
-    }
-    StringFBuilder builder = new StringFBuilder();
-    builder.appendF( "<h1>Error</h1>\n" );
-    builder.appendF( "<p><![CDATA[%s]]></p>\n", writer.toString() );
-    return builder.toString();
   }
   
 } /* ENDCLASS */
