@@ -137,7 +137,6 @@
       <groupId>com.kasisoft.cdi</groupId>
       <artifactId>weldex</artifactId>
       <version>${version-weldex}</version>
-      <scope>test</scope>
     </dependency>
     <dependency>
       <groupId>org.testng</groupId>
