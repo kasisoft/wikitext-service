@@ -1,42 +1,31 @@
-Purpose
-=======
+# Purpose
 
 A collection of simple services allowing to use various wiki notations to generate html from it.
 
 
-Contact
-=======
+# Infos
 
-* daniel.kasmeroglu@kasisoft.net
-
-
-Requirements
-============
-
- * Java 8
+* [eMail: daniel.kasmeroglu@kasisoft.net](mailto:daniel.kasmeroglu@kasisoft.net)
+* [Jira](https://kasisoft.com/jira/projects/CDIWIKI)
+* [Jenkins](https://kasisoft.com/jenkins/job/cdi.wikitext-service)
+* [GIT](https://kasisoft.com/bitbucket/projects/CDI/repos/wikitext-service)
 
 
-Jira
-====
-
-* https://kasisoft.com/jira/browse/CDIWIKI
-
-
-Maven
-=====
+# Development Setup
 
 I assume that you're familiar with Maven. If not I suggest to visit the following page:
 
 * https://maven.apache.org/
 
 
+## Requirements
 
-Releases
---------
+* Java 8
 
-Releases can be found in Maven Central:
 
-* http://search.maven.org/#search%7Cgav%7C1%7Cg%3A%22com.kasisoft.cdi%22%20AND%20a%3A%22freemarker-service%22
+## Maven
+
+### Releases
 
      <dependency>
          <groupId>com.kasisoft.cdi</groupId>
@@ -44,8 +33,8 @@ Releases can be found in Maven Central:
         <version>0.9</version>
      </dependency>
 
-Snapshots
----------
+
+### Snapshots
 
 Snapshots can be used while accessing a dedicated maven repository. Your POM needs the following settings:
 
@@ -69,8 +58,7 @@ Snapshots can be used while accessing a dedicated maven repository. Your POM nee
      </repositories>
 
 
-USAGE
-=====
+# USAGE
 
 Either bei injection or instantiation.
 
@@ -88,8 +76,7 @@ Converting wikitext formatted content into html:
     String     thml     = instantiated.buildHtml( config, wikitext );
 
   
-License
-=======
+# License
 
 MIT License
 
