@@ -1,3 +1,7 @@
+# DISCONTINUED
+# DISCONTINUED
+# DISCONTINUED
+
 # Purpose
 
 A collection of simple services allowing to use various wiki notations to generate html from it.
@@ -6,8 +10,6 @@ A collection of simple services allowing to use various wiki notations to genera
 # Infos
 
 * [eMail: daniel.kasmeroglu@kasisoft.net](mailto:daniel.kasmeroglu@kasisoft.net)
-* [Jira](https://kasisoft.com/jira/projects/CDIWIKI)
-* [Jenkins](https://kasisoft.com/jenkins/job/cdi.wikitext-service)
 * [GIT](https://kasisoft.com/bitbucket/projects/CDI/repos/wikitext-service)
 
 
