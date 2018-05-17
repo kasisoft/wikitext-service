@@ -32,7 +32,7 @@ I assume that you're familiar with Maven. If not I suggest to visit the followin
      <dependency>
          <groupId>com.kasisoft.cdi</groupId>
         <artifactId>wikitext-service</artifactId>
-        <version>0.9</version>
+        <version>1.0</version>
      </dependency>
 
 
@@ -43,7 +43,7 @@ Snapshots can be used while accessing a dedicated maven repository. Your POM nee
      <dependency>
        <groupId>com.kasisoft.cdi</groupId>
        <artifactId>wikitext-service</artifactId>
-       <version>1.0-SNAPSHOT</version>
+       <version>1.1-SNAPSHOT</version>
      </dependency>
      
      <repositories>
